@@ -6,7 +6,7 @@
 //   NEWS_CATEGORY — ID або slug рубрики на ifnmu.edu.ua (наприклад 123 або "forensic-nursing")
 //   NEWS_SOURCE   — базова адреса WordPress (за замовчуванням https://www.ifnmu.edu.ua)
 
-const DEFAULT_CATEGORY = ""; // ← впишіть сюди ID/slug рубрики, якщо не хочете змінну середовища
+const DEFAULT_CATEGORY = "forensic-nursing"; // рубрика «Forensic_nursing» на ifnmu.edu.ua (змінна NEWS_CATEGORY її перекриває)
 const PER_PAGE = 6;
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", hellip: "…", laquo: "«", raquo: "»", ndash: "–", mdash: "—", rsquo: "’", lsquo: "‘", rdquo: "”", ldquo: "“" };
