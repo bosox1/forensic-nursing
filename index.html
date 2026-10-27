@@ -5,14 +5,57 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2C333A" />
-    <title>Forensic Nursing Ukraine — судова медсестринська справа</title>
-    <meta name="description" content="Проєкт ІФНМУ з розвитку форензичної (судової) медсестринської справи в Україні: навчання, протоколи, партнерство та підтримка постраждалих." />
+    <title>Судова медсестринська справа в Україні — Forensic Nursing Ukraine | ІФНМУ</title>
+    <meta name="description" content="Forensic Nursing Ukraine — проєкт Івано-Франківського національного медичного університету з розвитку судової медсестринської справи: навчання медсестер, протоколи документування, партнерство та підтримка постраждалих." />
+    <link rel="canonical" href="https://forensicnursing.ifnmu.edu.ua/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / соцмережі -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Forensic Nursing Ukraine" />
-    <meta property="og:description" content="Догляд, який зберігає доказ. Проєкт ІФНМУ з форензичного медсестринства." />
-    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:site_name" content="Forensic Nursing Ukraine" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:url" content="https://forensicnursing.ifnmu.edu.ua/" />
+    <meta property="og:title" content="Forensic Nursing Ukraine — судова медсестринська справа" />
+    <meta property="og:description" content="Догляд, який зберігає доказ. Проєкт ІФНМУ з розвитку судово-медичного медсестринства в Україні." />
+    <meta property="og:image" content="https://forensicnursing.ifnmu.edu.ua/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Структуровані дані для Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://forensicnursing.ifnmu.edu.ua/#org",
+          "name": "Forensic Nursing Ukraine",
+          "alternateName": ["Судова медсестринська справа", "Форензичне медсестринство"],
+          "url": "https://forensicnursing.ifnmu.edu.ua/",
+          "logo": "https://forensicnursing.ifnmu.edu.ua/apple-touch-icon.png",
+          "email": "forensic.nursing@ifnmu.edu.ua",
+          "address": { "@type": "PostalAddress", "addressLocality": "Івано-Франківськ", "addressCountry": "UA" },
+          "parentOrganization": {
+            "@type": "CollegeOrUniversity",
+            "name": "Івано-Франківський національний медичний університет",
+            "alternateName": "Ivano-Frankivsk National Medical University",
+            "url": "https://www.ifnmu.edu.ua/"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://forensicnursing.ifnmu.edu.ua/#site",
+          "url": "https://forensicnursing.ifnmu.edu.ua/",
+          "name": "Forensic Nursing Ukraine",
+          "inLanguage": ["uk", "en"],
+          "publisher": { "@id": "https://forensicnursing.ifnmu.edu.ua/#org" }
+        }
+      ]
+    }
+    </script>
 
     <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +63,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight, ArrowUpRight, Mail, MapPin, Globe } from "lucide-r
 import Logo from "./components/Logo.jsx";
 import RidgeField from "./components/RidgeField.jsx";
 import PulseRule from "./components/PulseRule.jsx";
+import News from "./components/News.jsx";
 import { CONTENT, initials } from "./data/content.js";
 
 const EMAIL = "forensic.nursing@ifnmu.edu.ua"; // TODO: замінити на реальну адресу
@@ -239,10 +240,7 @@ export default function App() {
           <div className="team-head reveal"><h2>{t.partnery.head}</h2><p className="hint">{t.partnery.hint}</p></div>
           <div className="logos">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="logo reveal" style={{ transitionDelay: `${i * 45}ms` }}>
-                <span className="logo-mk" />
-                <span className="logo-tx">{t.partnery.placeholder}</span>
-              </div>
+              <div key={i} className="logo reveal" style={{ transitionDelay: `${i * 45}ms` }} aria-hidden="true" />
             ))}
           </div>
         </div>
@@ -255,17 +253,7 @@ export default function App() {
         <div className="wrap">
           <div className="sec-head reveal"><span className="idx">05</span><span className="kicker">{t.novyny.kicker}</span></div>
           <div className="team-head reveal"><h2>{t.novyny.head}</h2><p className="hint">{t.novyny.hint}</p></div>
-          <div className="news-grid">
-            {t.novyny.items.map(([cat, title], i) => (
-              <article key={i} className="news reveal" style={{ transitionDelay: `${i * 70}ms` }}>
-                <div className="news-top"><span className="chip">{cat}</span><span className="ph-badge">{t.novyny.badge}</span></div>
-                <div className="news-date">{t.novyny.date}</div>
-                <h3>{title}</h3>
-                <div className="sk sk1" /><div className="sk sk2" /><div className="sk sk3" />
-                <span className="news-link">{t.novyny.read} <ArrowRight size={16} /></span>
-              </article>
-            ))}
-          </div>
+          <News t={t.novyny} lang={lang} />
         </div>
       </section>
 

@@ -34,7 +34,7 @@ npm run preview  # локальний перегляд зібраного
 |----|------|
 | **Усі тексти (UA + EN)** | `src/data/content.js` |
 | **Команда** (імена, ролі, описи) | `src/data/content.js` → `komanda.members` |
-| **Новини** | `src/data/content.js` → `novyny.items` (пара `["Категорія", "Заголовок"]`) |
+| **Новини** | автоматично з ifnmu.edu.ua — див. розділ «Новини» нижче |
 | **Пошта** | `src/App.jsx` → константа `EMAIL` |
 | Кольори / шрифт / стилі | `src/index.css` (токени у `:root`) + `tailwind.config.js` |
 | Знак і його анімація | `src/components/Logo.jsx`, дані — `src/data/logo.js` |
@@ -43,10 +43,28 @@ npm run preview  # локальний перегляд зібраного
 
 ### Новини
 
-Зараз новини — це простий масив у `content.js`. Щоб додати новину, допишіть пару
-`["Категорія", "Заголовок"]` у `novyny.items` (окремо для `uk` та `en`).
-Коли знадобиться — сюди легко під'єднати підтягування стрічки з офіційного сайту
-ІФНМУ (RSS або парсинг): структура даних для цього вже підготовлена.
+Новини підтягуються автоматично з рубрики на **ifnmu.edu.ua** (WordPress REST API)
+через Netlify Function `netlify/functions/news.mjs` → адреса `/api/news`.
+Відповідь кешується на CDN Netlify на 30 хв.
+
+Яку рубрику брати — задається змінною середовища в Netlify
+(**Site configuration → Environment variables**):
+
+| Змінна | Значення |
+|--------|----------|
+| `NEWS_CATEGORY` | ID або slug рубрики (напр. `123` чи `forensic-nursing`) |
+| `NEWS_SOURCE` | необов'язково, за замовчуванням `https://www.ifnmu.edu.ua` |
+
+Після зміни змінної — **Deploys → Trigger deploy**. Якщо рубрика не задана або сайт
+ІФНМУ недоступний, секція показує «Новини скоро з'являться» і посилання на сайт ІФНМУ.
+У `npm run dev` функції немає — там завжди буде цей запасний стан (для повної перевірки: `netlify dev`).
+
+## SEO
+
+- `npm run build` пререндерить сторінку в статичний HTML (`scripts/prerender.mjs`) —
+  пошуковики бачать увесь текст без JavaScript; генерує `sitemap.xml`.
+- `public/robots.txt`, canonical, Open Graph (`og-image.jpg` 1200×630), JSON-LD (Organization + WebSite)
+  — у `index.html`.
 
 ## Доступність
 
